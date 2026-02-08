@@ -1,0 +1,322 @@
+.mealprep-page {
+  background: #f5f7fa;
+}
+
+/* Meal Summary */
+.meal-summary {
+  margin-bottom: 32px;
+}
+
+.summary-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card.highlight {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Day Selector */
+.day-selector {
+  margin-bottom: 24px;
+}
+
+.days-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.day-tab {
+  flex: 1;
+  min-width: 80px;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.day-tab:hover {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.day-tab.active {
+  background: #4CAF50;
+  color: white;
+}
+
+.day-short {
+  display: none;
+}
+
+.day-full {
+  display: inline;
+}
+
+/* Day Meals */
+.day-meals {
+  margin-bottom: 40px;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.day-header h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.day-totals {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #666;
+}
+
+.total-divider {
+  color: #ccc;
+}
+
+.total-item strong {
+  color: #4CAF50;
+  font-size: 1.1rem;
+}
+
+.meals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.meal-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+}
+
+.meal-icon {
+  font-size: 2rem;
+  width: 50px;
+  text-align: center;
+}
+
+.meal-info {
+  flex: 1;
+}
+
+.meal-type {
+  font-size: 0.8rem;
+  color: #4CAF50;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.meal-name {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 4px;
+}
+
+.meal-nutrition {
+  display: flex;
+  gap: 24px;
+}
+
+.nutrition-item {
+  text-align: center;
+}
+
+.nutrition-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.nutrition-label {
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+}
+
+/* Weekly Overview */
+.weekly-overview {
+  margin-bottom: 40px;
+}
+
+.weekly-overview h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.week-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.week-day-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.week-day-card:hover {
+  transform: scale(1.05);
+}
+
+.week-day-card.selected .week-day-name {
+  color: #4CAF50;
+  font-weight: 700;
+}
+
+.week-day-name {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.week-day-bar {
+  width: 30px;
+  height: 100px;
+  background: #e8f5e9;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.week-day-bar .bar-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #4CAF50, #81C784);
+  border-radius: 15px;
+  transition: height 0.5s ease;
+}
+
+.week-day-cal {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 500;
+}
+
+/* Nutrition Tips */
+.nutrition-tips h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.tips-grid .tip-card {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.tips-grid .tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.tips-grid .tip-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.tips-grid .tip-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .day-short {
+    display: inline;
+  }
+
+  .day-full {
+    display: none;
+  }
+
+  .day-tab {
+    min-width: 50px;
+    padding: 12px 8px;
+  }
+
+  .meal-card {
+    flex-wrap: wrap;
+  }
+
+  .meal-nutrition {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+  }
+
+  .week-day-bar {
+    height: 80px;
+    width: 24px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .day-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

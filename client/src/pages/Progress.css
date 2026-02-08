@@ -1,0 +1,336 @@
+.progress-page {
+  background: #f5f7fa;
+}
+
+/* Overall Status */
+.overall-status {
+  margin-bottom: 32px;
+}
+
+.overall-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 32px;
+}
+
+.overall-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.overall-header h2 {
+  margin: 0;
+  color: white;
+}
+
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.light {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.3;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light.red {
+  background: #f44336;
+}
+
+.light.amber {
+  background: #FFC107;
+}
+
+.light.green {
+  background: #4CAF50;
+}
+
+.traffic-light.red .light.red {
+  opacity: 1;
+  box-shadow: 0 0 15px #f44336;
+}
+
+.traffic-light.amber .light.amber {
+  opacity: 1;
+  box-shadow: 0 0 15px #FFC107;
+}
+
+.traffic-light.green .light.green {
+  opacity: 1;
+  box-shadow: 0 0 15px #4CAF50;
+}
+
+.overall-content {
+  text-align: center;
+}
+
+.overall-score {
+  margin-bottom: 16px;
+}
+
+.score-number {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-suffix {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.overall-message {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Legend */
+.legend-section {
+  margin-bottom: 32px;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Categories */
+.categories-section {
+  margin-bottom: 40px;
+}
+
+.categories-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.categories-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.category-card {
+  padding: 24px;
+  border-left: 4px solid;
+}
+
+.category-card.green {
+  border-left-color: #4CAF50;
+}
+
+.category-card.amber {
+  border-left-color: #FFC107;
+}
+
+.category-card.red {
+  border-left-color: #f44336;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.status-badge.green {
+  background: #4CAF50;
+}
+
+.status-badge.amber {
+  background: #FFC107;
+  color: #333;
+}
+
+.status-badge.red {
+  background: #f44336;
+}
+
+.category-title h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.status-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.status-label.green {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.status-label.amber {
+  background: rgba(255, 193, 7, 0.1);
+  color: #F57C00;
+}
+
+.status-label.red {
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+}
+
+.category-progress {
+  margin-bottom: 16px;
+}
+
+.progress-header {
+  margin-bottom: 8px;
+}
+
+.current-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.target-value {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.progress-track {
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.progress-fill.green {
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+}
+
+.progress-fill.amber {
+  background: linear-gradient(90deg, #FFC107, #FFD54F);
+}
+
+.progress-fill.red {
+  background: linear-gradient(90deg, #f44336, #e57373);
+}
+
+.progress-percentage {
+  text-align: right;
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.category-description {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Tips */
+.tips-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.tips-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.tip-card {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.tip-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.tip-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .overall-card {
+    padding: 24px;
+  }
+
+  .score-number {
+    font-size: 3.5rem;
+  }
+
+  .legend {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .categories-grid,
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
