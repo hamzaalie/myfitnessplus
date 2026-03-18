@@ -1,0 +1,188 @@
+.water-tracker {
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.water-tracker h3 {
+  margin-bottom: 0.5rem;
+  color: #3498db;
+  font-size: 1.3rem;
+}
+
+.water-subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.water-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.water-glasses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.water-glass {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: #ecf0f1;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.water-glass:hover {
+  transform: scale(1.05);
+}
+
+.water-glass.filled {
+  background: #3498db;
+  border-color: #2980b9;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+.water-stats {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-left: 1rem;
+}
+
+.water-count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.water-target {
+  font-size: 1rem;
+  color: #999;
+}
+
+.water-progress {
+  margin-bottom: 2rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
+
+.water-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.water-controls .btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-secondary {
+  background: #e8e8e8;
+  color: #333;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #d0d0d0;
+}
+
+.btn-primary {
+  background: #3498db;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dark mode */
+.dark-mode .water-tracker {
+  background: #2d2d2d;
+}
+
+.dark-mode .water-tracker h3 {
+  color: #5dade2;
+}
+
+.dark-mode .water-subtitle {
+  color: #ccc;
+}
+
+.dark-mode .water-glass {
+  background: #3a3a3a;
+  border-color: #555;
+  color: #ccc;
+}
+
+.dark-mode .water-glass.filled {
+  background: #5dade2;
+  border-color: #3d7fa6;
+}
+
+.dark-mode .water-count {
+  color: #5dade2;
+}
+
+.dark-mode .water-target {
+  color: #999;
+}
+
+.dark-mode .progress-bar {
+  background: #3a3a3a;
+}
+
+.dark-mode .progress-text {
+  color: #bbb;
+}
+
+.dark-mode .btn-secondary {
+  background: #3a3a3a;
+  color: #e0e0e0;
+}
+
+.dark-mode .btn-secondary:hover:not(:disabled) {
+  background: #4a4a4a;
+}
