@@ -1,0 +1,617 @@
+.mealprep-page {
+  background: #f5f7fa;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .mealprep-page {
+  background: #1a1a1a;
+}
+
+/* Meal Summary */
+.meal-summary {
+  margin-bottom: 32px;
+}
+
+.summary-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .stat-card {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: #e0e0e0;
+}
+
+.stat-card.highlight {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Calorie Progress Section */
+.calorie-progress {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .calorie-progress {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.progress-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .progress-header h2 {
+  color: #e0e0e0;
+}
+
+.remaining {
+  color: #666;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .remaining {
+  color: #bbb;
+}
+
+.progress-bar-container {
+  width: 100%;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .progress-bar {
+  background: #444;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .progress-labels {
+  color: #bbb;
+}
+
+/* Add Meal Section */
+.add-meal-section {
+  margin-bottom: 32px;
+}
+
+.meal-form-wrapper {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .meal-form-wrapper {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.meal-form {
+  max-width: 100%;
+}
+
+.meal-form h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .meal-form h3 {
+  color: #e0e0e0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.meal-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-form .form-group label {
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .meal-form .form-group label {
+  color: #e0e0e0;
+}
+
+.meal-form .form-group input,
+.meal-form .form-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .meal-form .form-group input,
+.dark-mode .meal-form .form-group select {
+  background: #3a3a3a;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+.meal-form .form-group input:focus,
+.meal-form .form-group select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.dark-mode .meal-form .form-group input:focus,
+.dark-mode .meal-form .form-group select:focus {
+  border-color: #5dade2;
+  box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.form-actions .btn {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Meals Section */
+.meals-section {
+  margin-bottom: 32px;
+}
+
+.meals-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .meals-section h2 {
+  color: #e0e0e0;
+}
+
+.no-meals {
+  text-align: center;
+  color: #666;
+  padding: 40px 20px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .no-meals {
+  color: #bbb;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.meal-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .meal-card {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.meal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dark-mode .meal-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.meal-type-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meal-icon {
+  font-size: 1.5rem;
+}
+
+.meal-type {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .meal-type {
+  color: #bbb;
+}
+
+.meal-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-icon.edit:hover {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.btn-icon.delete:hover {
+  background: rgba(244, 67, 54, 0.2);
+}
+
+.meal-name {
+  color: #333;
+  margin: 12px 0;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .meal-name {
+  color: #e0e0e0;
+}
+
+.meal-nutrition {
+  display: flex;
+  gap: 16px;
+}
+
+.nutrition-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.nutrition-label {
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .nutrition-label {
+  color: #888;
+}
+
+.nutrition-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4CAF50;
+}
+
+/* Day Selector - Legacy styles for reference */
+.day-selector {
+  margin-bottom: 24px;
+}
+
+.days-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px;
+  background: white;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .days-tabs {
+  background: #2d2d2d;
+}
+
+/* Nutrition Tips */
+.nutrition-tips {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.nutrition-tips h2 {
+  color: #333;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .nutrition-tips h2 {
+  color: #e0e0e0;
+}
+
+.tips-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.tip-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .tip-card {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.tip-card h3 {
+  color: #333;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .tip-card h3 {
+  color: #e0e0e0;
+}
+
+.tip-card p {
+  color: #666;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .tip-card p {
+  color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .meals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-card {
+    text-align: left;
+  }
+}
+
+/* Weekly Overview */
+.weekly-overview {
+  margin-bottom: 40px;
+}
+
+.weekly-overview h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.week-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.week-day-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.week-day-card:hover {
+  transform: scale(1.05);
+}
+
+.week-day-card.selected .week-day-name {
+  color: #4CAF50;
+  font-weight: 700;
+}
+
+.week-day-name {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.week-day-bar {
+  width: 30px;
+  height: 100px;
+  background: #e8f5e9;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.week-day-bar .bar-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #4CAF50, #81C784);
+  border-radius: 15px;
+  transition: height 0.5s ease;
+}
+
+.week-day-cal {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 500;
+}
+
+/* Nutrition Tips */
+.nutrition-tips h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.tips-grid .tip-card {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.tips-grid .tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.tips-grid .tip-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.tips-grid .tip-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .day-short {
+    display: inline;
+  }
+
+  .day-full {
+    display: none;
+  }
+
+  .day-tab {
+    min-width: 50px;
+    padding: 12px 8px;
+  }
+
+  .meal-card {
+    flex-wrap: wrap;
+  }
+
+  .meal-nutrition {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+  }
+
+  .week-day-bar {
+    height: 80px;
+    width: 24px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .day-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
