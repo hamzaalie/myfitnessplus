@@ -103,14 +103,6 @@ const Navbar = () => {
               >
                 Sign Up
               </Link>
-              <button 
-                className="btn-dark-mode" 
-                onClick={toggleDarkMode}
-                aria-label="Toggle dark mode"
-                title="Toggle dark mode"
-              >
-                🌙
-              </button>
             </div>
           )}
         </div>
