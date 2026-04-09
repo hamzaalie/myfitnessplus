@@ -12,6 +12,11 @@ connectDB();
 
 // Import routes
 const authRoutes = require('./routes/auth');
+const mealsRoutes = require('./routes/meals');
+const workoutsRoutes = require('./routes/workouts');
+const goalsRoutes = require('./routes/goals');
+const waterIntakeRoutes = require('./routes/waterIntake');
+const profileRoutes = require('./routes/profile');
 
 // Initialize express app
 const app = express();
@@ -22,6 +27,11 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/meals', mealsRoutes);
+app.use('/api/workouts', workoutsRoutes);
+app.use('/api/goals', goalsRoutes);
+app.use('/api/water-intake', waterIntakeRoutes);
+app.use('/api/profile', profileRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {

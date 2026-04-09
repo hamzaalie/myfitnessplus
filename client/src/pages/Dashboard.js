@@ -1,22 +1,130 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { dashboardData, progressData } from '../data/mockData';
+import { mealsAPI, workoutsAPI, waterAPI, profileAPI } from '../services/api';
 import './Dashboard.css';
+
+const motivationalQuotes = [
+  "Your body is a temple, but only if you treat it right.",
+  "Don't wish for it, work for it.",
+  "Success is the sum of small efforts repeated day in and day out.",
+  "The only bad workout is the one that didn't happen.",
+  "Your health is an investment, not an expense.",
+  "Push harder than yesterday if you want a different tomorrow.",
+  "Take care of your body. It's the only place you have to live.",
+];
+
+const getRandomQuote = () => {
+  return motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+};
 
 const Dashboard = () => {
   const { user } = useAuth();
-  const { todaySummary, weeklyHighlights } = dashboardData;
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [quote, setQuote] = useState(null);
+  const [todaySummary, setTodaySummary] = useState({
+    caloriesConsumed: 0,
+    caloriesTarget: 2000,
+    workoutCompleted: false,
+    waterGlasses: 0,
+    stepsCount: 0,
+  });
+  const [weeklyHighlights, setWeeklyHighlights] = useState({
+    workoutsCompleted: 0,
+    avgCalories: 0,
+    streakDays: 0,
+    weightChange: 0,
+  });
 
-  // Get status color class
-  const getStatusClass = (status) => {
-    switch (status) {
-      case 'green': return 'status-green';
-      case 'amber': return 'status-amber';
-      case 'red': return 'status-red';
-      default: return 'status-amber';
-    }
-  };
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        // Get today's date formatted as ISO string
+        const todayDate = new Date();
+        todayDate.setHours(0, 0, 0, 0);
+        const todayString = todayDate.toISOString().split('T')[0];
+
+        // Fetch user profile to get target calories
+        const profileData = await profileAPI.getProfile();
+        const targetCalories = profileData.targetCalories || 2000;
+
+        // Fetch today's meals
+        const meals = await mealsAPI.getMeals(todayString);
+        const caloriesConsumed = meals.reduce((sum, meal) => sum + (meal.calories || 0), 0);
+
+        // Fetch water intake for today
+        const waterData = await waterAPI.getWaterIntake();
+        const waterGlasses = waterData.glassesConsumed || 0;
+
+        // Fetch today's workout
+        const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const todayName = dayNames[todayDate.getDay()];
+        const workouts = await workoutsAPI.getWorkouts();
+        const todayWorkout = workouts.find(w => w.day === todayName);
+        const workoutCompleted = todayWorkout ? 
+          todayWorkout.exercises.every(e => e.completed) : false;
+
+        setTodaySummary({
+          caloriesConsumed,
+          caloriesTarget: targetCalories,
+          workoutCompleted,
+          waterGlasses,
+          stepsCount: Math.floor(Math.random() * 15000) + 3000, // Placeholder
+        });
+
+        // Calculate weekly highlights (using real data where available)
+        setWeeklyHighlights({
+          workoutsCompleted: workouts.filter(w => w.completionPercentage > 0).length,
+          avgCalories: Math.round(caloriesConsumed),
+          streakDays: 3, // Placeholder - would need historical data
+          weightChange: 0, // Placeholder
+        });
+
+        // Set a random motivational quote
+        const randomQuote = getRandomQuote();
+        setQuote({ text: randomQuote, author: 'Anonymous' });
+
+      } catch (err) {
+        console.error('Error fetching dashboard data:', err);
+        setError('Failed to load dashboard data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="dashboard page">
+        <div className="container">
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            height: '400px' 
+          }}>
+            <p>Loading dashboard...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="dashboard page">
+        <div className="container">
+          <div className="alert alert-error">{error}</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="dashboard page">
@@ -39,7 +147,7 @@ const Dashboard = () => {
               <div className="summary-progress">
                 <div 
                   className="progress-bar"
-                  style={{ width: `${(todaySummary.caloriesConsumed / todaySummary.caloriesTarget) * 100}%` }}
+                  style={{ width: `${Math.min((todaySummary.caloriesConsumed / todaySummary.caloriesTarget) * 100, 100)}%` }}
                 ></div>
               </div>
             </div>
@@ -82,40 +190,10 @@ const Dashboard = () => {
               <div className="summary-progress">
                 <div 
                   className="progress-bar steps"
-                  style={{ width: `${(todaySummary.stepsCount / 10000) * 100}%` }}
+                  style={{ width: `${Math.min((todaySummary.stepsCount / 10000) * 100, 100)}%` }}
                 ></div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Quick Analytics */}
-        <section className="dashboard-section">
-          <div className="section-header">
-            <h2>Progress Overview</h2>
-            <Link to="/progress" className="view-all">View Details →</Link>
-          </div>
-          <div className="analytics-cards grid-3">
-            {progressData.categories.slice(0, 6).map((category) => (
-              <Link to="/progress" key={category.id} className="analytics-card card">
-                <div className="analytics-header">
-                  <span className={`status-indicator ${getStatusClass(category.status)}`}></span>
-                  <span className="analytics-title">{category.name}</span>
-                </div>
-                <div className="analytics-score">
-                  <span className="score-value">{category.score}%</span>
-                </div>
-                <div className="analytics-bar">
-                  <div 
-                    className={`bar-fill ${category.status}`}
-                    style={{ width: `${category.score}%` }}
-                  ></div>
-                </div>
-                <p className="analytics-detail">
-                  {category.current} / {category.target} {category.unit}
-                </p>
-              </Link>
-            ))}
           </div>
         </section>
 
@@ -164,6 +242,17 @@ const Dashboard = () => {
             </Link>
           </div>
         </section>
+
+        {/* Motivational Quote */}
+        {quote && (
+          <section className="motivational-quote">
+            <div className="quote-card">
+              <div className="quote-icon">💡</div>
+              <blockquote className="quote-text">{quote.text}</blockquote>
+              <cite className="quote-author">— {quote.author}</cite>
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

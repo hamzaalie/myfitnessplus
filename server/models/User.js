@@ -15,7 +15,43 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  // Profile fields
+  fitnessGoal: {
+    type: String,
+    default: 'General Fitness',
+    enum: ['Weight Loss', 'Muscle Gain', 'General Fitness', 'Endurance']
+  },
+  targetCalories: {
+    type: Number,
+    default: 2000
+  },
+  targetWeight: {
+    type: Number,
+    default: null
+  },
+  height: {
+    type: Number,
+    default: null // in cm
+  },
+  currentWeight: {
+    type: Number,
+    default: null
+  },
+  // UI preferences
+  darkMode: {
+    type: Boolean,
+    default: false
+  },
+  // Achievements/Badges
+  badges: [
+    {
+      id: String,
+      name: String,
+      unlocked: Boolean,
+      unlockedDate: Date
+    }
+  ]
 }, {
   timestamps: true
 });

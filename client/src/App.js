@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { DarkModeProvider } from './context/DarkModeContext';
 
 // Components
 import Navbar from './components/Navbar';
@@ -15,6 +16,7 @@ import Progress from './pages/Progress';
 import MealPrep from './pages/MealPrep';
 import Workout from './pages/Workout';
 import Goals from './pages/Goals';
+import Profile from './pages/Profile';
 
 const AppRoutes = () => {
   const { isAuthenticated, loading } = useAuth();
@@ -89,6 +91,14 @@ const AppRoutes = () => {
           </ProtectedRoute>
         } 
       />
+      <Route 
+        path="/profile" 
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        } 
+      />
 
       {/* Catch all - redirect to home */}
       <Route path="*" element={<Navigate to="/" />} />
@@ -99,12 +109,14 @@ const AppRoutes = () => {
 function App() {
   return (
     <AuthProvider>
-      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <div className="app">
-          <Navbar />
-          <AppRoutes />
-        </div>
-      </Router>
+      <DarkModeProvider>
+        <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+          <div className="app">
+            <Navbar />
+            <AppRoutes />
+          </div>
+        </Router>
+      </DarkModeProvider>
     </AuthProvider>
   );
 }

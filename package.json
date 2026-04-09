@@ -8,7 +8,11 @@
     "server": "nodemon server/server.js",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install-all": "npm install && cd client && npm install"
+    "install-all": "npm install && cd client && npm install",
+    "seed:workouts": "node server/scripts/seedWorkouts.js",
+    "seed:goals": "node server/scripts/seedGoals.js",
+    "seed:meals": "node server/scripts/seedMeals.js",
+    "seed:all": "node server/scripts/seedAll.js"
   },
   "keywords": ["fitness", "health", "workout", "meal-prep"],
   "author": "MyFitnessPlus Team",

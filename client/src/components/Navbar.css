@@ -4,6 +4,12 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .navbar {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
@@ -23,6 +29,11 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .navbar-brand {
+  color: #e0e0e0;
 }
 
 .brand-icon {
@@ -39,7 +50,32 @@
 .navbar-menu {
   display: flex;
   align-items: center;
+  gap: 6px;
+}
+
+.nav-public-actions {
+  display: flex;
+  align-items: center;
   gap: 8px;
+}
+
+.nav-public-actions .btn-dark-mode {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(76, 175, 80, 0.22);
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.08);
+  font-size: 1.05rem;
+}
+
+.nav-public-actions .btn-dark-mode:hover {
+  border-color: rgba(76, 175, 80, 0.4);
+  background: rgba(76, 175, 80, 0.16);
+}
+
+.dark-mode .nav-public-actions .btn-dark-mode {
+  border-color: rgba(127, 203, 152, 0.28);
+  background: rgba(127, 203, 152, 0.14);
 }
 
 .nav-link {
@@ -50,9 +86,17 @@
   transition: all 0.3s ease;
 }
 
+.dark-mode .nav-link {
+  color: #bbb;
+}
+
 .nav-link:hover {
   color: #4CAF50;
   background: rgba(76, 175, 80, 0.1);
+}
+
+.dark-mode .nav-link:hover {
+  background: rgba(76, 175, 80, 0.2);
 }
 
 .nav-link.active {
@@ -60,9 +104,95 @@
   background: rgba(76, 175, 80, 0.1);
 }
 
+.dark-mode .nav-link.active {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.btn-dark-mode {
+  background: rgba(76, 175, 80, 0.08);
+  border: 1px solid rgba(76, 175, 80, 0.22);
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  line-height: 1;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-dark-mode:hover {
+  border-color: rgba(76, 175, 80, 0.4);
+  background: rgba(76, 175, 80, 0.16);
+}
+
+.dark-mode .btn-dark-mode {
+  border-color: rgba(127, 203, 152, 0.28);
+  background: rgba(127, 203, 152, 0.14);
+}
+
+.dark-mode .btn-dark-mode:hover {
+  border-color: rgba(127, 203, 152, 0.5);
+  background: rgba(127, 203, 152, 0.22);
+}
+
 .nav-btn {
-  padding: 10px 20px;
-  font-size: 0.9rem;
+  padding: 0 14px;
+  font-size: 0.88rem;
+  border-radius: 9px;
+  box-shadow: none;
+  min-width: 104px;
+  height: 42px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.navbar .nav-btn.btn-primary {
+  background: linear-gradient(135deg, #2d7ee8, #2868d7);
+  border-color: rgba(40, 104, 215, 0.45);
+  box-shadow: none;
+}
+
+.navbar .nav-btn.btn-primary:hover {
+  background: linear-gradient(135deg, #286fda, #245fc7);
+  box-shadow: 0 3px 8px rgba(40, 104, 215, 0.16);
+}
+
+.nav-auth-link {
+  padding: 0 14px;
+  border-radius: 9px;
+  min-width: 104px;
+  height: 42px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(76, 175, 80, 0.25);
+  color: #2f6f54;
+  background: rgba(76, 175, 80, 0.07);
+}
+
+.nav-auth-link:hover {
+  border-color: rgba(76, 175, 80, 0.45);
+  background: rgba(76, 175, 80, 0.14);
+}
+
+.dark-mode .nav-auth-link {
+  color: #b7dfc7;
+  border-color: rgba(127, 203, 152, 0.3);
+  background: rgba(127, 203, 152, 0.12);
+}
+
+.dark-mode .nav-auth-link:hover {
+  border-color: rgba(127, 203, 152, 0.5);
+  background: rgba(127, 203, 152, 0.2);
 }
 
 .nav-user {
@@ -72,11 +202,21 @@
   margin-left: 16px;
   padding-left: 16px;
   border-left: 1px solid #e0e0e0;
+  transition: border-color 0.3s ease;
+}
+
+.dark-mode .nav-user {
+  border-left-color: #444;
 }
 
 .user-name {
   color: #666;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .user-name {
+  color: #bbb;
 }
 
 .btn-logout {
@@ -113,6 +253,10 @@
   transition: all 0.3s ease;
 }
 
+.dark-mode .toggle-bar {
+  background: #e0e0e0;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .navbar-toggle {
@@ -133,6 +277,10 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+  }
+
+  .dark-mode .navbar-menu {
+    background: #2d2d2d;
   }
 
   .navbar-menu.open {
@@ -156,8 +304,26 @@
     border-top: 1px solid #e0e0e0;
   }
 
+  .dark-mode .nav-user {
+    border-top-color: #444;
+  }
+
   .nav-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .nav-auth-link {
+    width: 100%;
+  }
+
+  .nav-public-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-public-actions .btn-dark-mode {
+    align-self: center;
   }
 }

@@ -1,5 +1,10 @@
 .dashboard {
   background: #f5f7fa;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .dashboard {
+  background: #1a1a1a;
 }
 
 .dashboard-section {
@@ -10,6 +15,11 @@
   font-size: 1.5rem;
   color: #333;
   margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .dashboard-section h2 {
+  color: #e0e0e0;
 }
 
 .section-header {
@@ -47,6 +57,12 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .summary-card {
+  background: #2d2d2d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .summary-icon {
@@ -57,11 +73,21 @@
   font-size: 1.75rem;
   color: #333;
   margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .summary-info h3 {
+  color: #e0e0e0;
 }
 
 .summary-info p {
   color: #666;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .summary-info p {
+  color: #bbb;
 }
 
 .summary-progress {
@@ -69,6 +95,11 @@
   background: #e0e0e0;
   border-radius: 4px;
   overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .summary-progress {
+  background: #444;
 }
 
 .progress-bar {
@@ -115,10 +146,15 @@
 .analytics-card {
   cursor: pointer;
   padding: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .analytics-card:hover {
   transform: translateY(-4px);
+}
+
+.dark-mode .analytics-card {
+  background: #2d2d2d !important;
 }
 
 .analytics-header {
@@ -130,6 +166,11 @@
 .analytics-title {
   font-weight: 600;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .analytics-title {
+  color: #e0e0e0;
 }
 
 .analytics-score {
@@ -140,6 +181,11 @@
   font-size: 2rem;
   font-weight: 700;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .score-value {
+  color: #e0e0e0;
 }
 
 .analytics-bar {
@@ -148,6 +194,11 @@
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .analytics-bar {
+  background: #444;
 }
 
 .bar-fill {
@@ -171,6 +222,11 @@
 .analytics-detail {
   font-size: 0.85rem;
   color: #666;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .analytics-detail {
+  color: #bbb;
 }
 
 /* Highlights */
@@ -185,6 +241,12 @@
   padding: 24px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .highlight-card {
+  background: #2d2d2d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .highlight-value {
@@ -197,6 +259,11 @@
 .highlight-label {
   color: #666;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .highlight-label {
+  color: #bbb;
 }
 
 /* Quick Links */
@@ -217,10 +284,19 @@
   transition: all 0.3s ease;
 }
 
+.dark-mode .quick-link-card {
+  background: #2d2d2d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
 .quick-link-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.dark-mode .quick-link-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .quick-link-card:hover .quick-text {
@@ -235,6 +311,61 @@
   font-weight: 600;
   color: #333;
   transition: color 0.3s ease;
+}
+
+.dark-mode .quick-text {
+  color: #e0e0e0;
+}
+
+/* Motivational Quote */
+.motivational-quote {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.quote-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 32px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .quote-card {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+}
+
+.dark-mode .quote-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.quote-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 16px 0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.quote-author {
+  display: block;
+  font-size: 0.95rem;
+  margin-top: 16px;
+  opacity: 0.9;
+  font-style: normal;
 }
 
 /* Responsive */

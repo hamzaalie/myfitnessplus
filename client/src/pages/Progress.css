@@ -1,5 +1,10 @@
 .progress-page {
   background: #f5f7fa;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .progress-page {
+  background: #1a1a1a;
 }
 
 /* Overall Status */
@@ -126,6 +131,23 @@
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .categories-section h2 {
+  color: #e0e0e0;
+}
+
+.no-goals {
+  text-align: center;
+  color: #666;
+  padding: 30px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .no-goals {
+  color: #bbb;
 }
 
 .categories-grid {
@@ -136,6 +158,15 @@
 .category-card {
   padding: 24px;
   border-left: 4px solid;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .category-card {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .category-card.green {
@@ -191,6 +222,11 @@
   margin: 0;
   font-size: 1.1rem;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .category-title h3 {
+  color: #e0e0e0;
 }
 
 .status-label {
@@ -198,6 +234,7 @@
   font-weight: 500;
   padding: 6px 12px;
   border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .status-label.green {
@@ -227,11 +264,21 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .current-value {
+  color: #e0e0e0;
 }
 
 .target-value {
   color: #666;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .target-value {
+  color: #bbb;
 }
 
 .progress-track {
@@ -240,6 +287,31 @@
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .progress-track {
+  background: #444;
+}
+
+.progress-percentage {
+  font-size: 0.85rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .progress-percentage {
+  color: #bbb;
+}
+
+.category-description {
+  color: #666;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .category-description {
+  color: #bbb;
 }
 
 .progress-fill {
@@ -278,6 +350,11 @@
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .tips-section h2 {
+  color: #e0e0e0;
 }
 
 .tips-grid {
@@ -288,6 +365,19 @@
 .tip-card {
   text-align: center;
   padding: 32px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .tip-card {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
 }
 
 .tip-icon {
@@ -299,12 +389,22 @@
   font-size: 1.1rem;
   margin-bottom: 12px;
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .tip-card h3 {
+  color: #e0e0e0;
 }
 
 .tip-card p {
   color: #666;
   font-size: 0.9rem;
   line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .tip-card p {
+  color: #bbb;
 }
 
 /* Responsive */
