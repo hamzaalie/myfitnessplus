@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { useDarkMode } from '../context/DarkModeContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
-  const { toggleDarkMode } = useDarkMode();
   const location = useLocation();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -82,14 +80,6 @@ const Navbar = () => {
               >
                 Profile
               </Link>
-              <button 
-                className="btn-dark-mode" 
-                onClick={toggleDarkMode}
-                aria-label="Toggle dark mode"
-                title="Toggle dark mode"
-              >
-                🌙
-              </button>
               <div className="nav-user">
                 <span className="user-name">Hi, {user?.name?.split(' ')[0]}</span>
                 <button onClick={handleLogout} className="btn-logout">
